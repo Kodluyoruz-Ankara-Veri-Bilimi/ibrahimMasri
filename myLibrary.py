@@ -19,8 +19,8 @@ class myLibrary:
     def printData(self): 
         print(self.data)
         
-    def headData(self, colunm):
-        print(self.data.head(colunm))
+    def headData(self, line):
+        print(self.data.head(line))
         
     def describeData(self): 
         print(self.data.describe())
@@ -53,11 +53,11 @@ class myLibrary:
     
     def histogramData(self):
         self.pd.DataFrame(self.data['bad']).plot.hist()
-    
+    #probability plot
     def probplot(self,cName):
         self.stats.probplot(self.data[cName], dist="norm", plot = self.py) 
         self.py.show()
-    
+    #sampels queantities
     def qqplot(self,cName):
         self.sm.qqplot(self.data[cName], line="s")
         self.py.show()
